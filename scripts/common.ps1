@@ -175,7 +175,12 @@ function Invoke-UpdImportDesigner {
     }
 
     & $context.OneCExecutable @arguments
-    $designerExitCode = $LASTEXITCODE
+    # GUI/batch launches of 1cv8.exe do not always initialise LASTEXITCODE
+    # in Windows PowerShell. The /DumpResult file is the authoritative result.
+    $designerExitCode = 0
+    if (Test-Path -LiteralPath 'variable:LASTEXITCODE') {
+        $designerExitCode = $LASTEXITCODE
+    }
 
     if ($designerExitCode -ne 0) {
         throw "1C Designer failed with exit code $designerExitCode. See $logPath"
