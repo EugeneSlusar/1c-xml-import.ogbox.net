@@ -1,0 +1,19 @@
+# Local machine configuration and credentials
+config/local.settings.json
+
+# Generated 1C artifacts
+dist/*.epf
+dist/*.erf
+
+# Build logs and temporary files
+build/*
+!build/.gitkeep
+*.log
+*.tmp
+
+# IDE and operating system files
+.idea/
+.vscode/settings.json
+.DS_Store
+Thumbs.db
+

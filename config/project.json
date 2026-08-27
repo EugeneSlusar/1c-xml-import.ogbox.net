@@ -1,0 +1,7 @@
+{
+  "sourceRoot": "src/UpdImport.xml",
+  "artifact": "dist/ЗагрузкаУПД.epf",
+  "sampleXml": "tests/samples/ON_NSCHFDOPPR_6321351636_6324088983_20260618_230.xml",
+  "logsDirectory": "build/logs"
+}
+
