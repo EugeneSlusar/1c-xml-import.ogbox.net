@@ -45,6 +45,12 @@ function Get-UpdImportContext {
         ProjectRoot = $projectRoot
         OneCExecutable = $oneCExecutable
         InfobasePath = $infobasePath
+        TargetConfiguration = $projectConfig.target.configuration
+        TargetConfigurationVersion = $projectConfig.target.configurationVersion
+        TargetPlatformVersion = $projectConfig.target.platformVersion
+        DevelopmentConfiguration = $projectConfig.developmentStand.configuration
+        DevelopmentConfigurationVersion = $projectConfig.developmentStand.configurationVersion
+        DevelopmentPlatformVersion = $projectConfig.developmentStand.platformVersion
         SourceRoot = ConvertTo-ProjectPath -ProjectRoot $projectRoot -Path $projectConfig.sourceRoot
         Artifact = ConvertTo-ProjectPath -ProjectRoot $projectRoot -Path $projectConfig.artifact
         SampleXml = ConvertTo-ProjectPath -ProjectRoot $projectRoot -Path $projectConfig.sampleXml
@@ -184,4 +190,3 @@ function Invoke-UpdImportDesigner {
 
     Write-Host "$Operation completed successfully."
 }
-

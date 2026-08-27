@@ -1,7 +1,16 @@
 {
+  "target": {
+    "configuration": "1С:Управление торговлей (базовая)",
+    "configurationVersion": "11.5.24.43",
+    "platformVersion": "8.3.27.1688"
+  },
+  "developmentStand": {
+    "configuration": "1С:Управление нашей фирмой (базовая)",
+    "configurationVersion": "3.0.12.237",
+    "platformVersion": "8.3.27.1936"
+  },
   "sourceRoot": "src/UpdImport.xml",
   "artifact": "dist/ЗагрузкаУПД.epf",
   "sampleXml": "tests/samples/ON_NSCHFDOPPR_6321351636_6324088983_20260618_230.xml",
   "logsDirectory": "build/logs"
 }
-

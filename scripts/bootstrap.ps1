@@ -7,8 +7,11 @@ $context = Get-UpdImportContext
 
 Write-Host '1C UPD import project preflight'
 Write-Host ('Project:       ' + $context.ProjectRoot)
-Write-Host ('1C executable: ' + $context.OneCExecutable)
-Write-Host ('Infobase:      ' + $context.InfobasePath)
+Write-Host ('Local 1C:      ' + $context.OneCExecutable)
+Write-Host ('Local stand:   ' + $context.DevelopmentConfiguration + ' ' + $context.DevelopmentConfigurationVersion)
+Write-Host ('Local base:    ' + $context.InfobasePath)
+Write-Host ('Target:        ' + $context.TargetConfiguration + ' ' + $context.TargetConfigurationVersion)
+Write-Host ('Target 1C:     ' + $context.TargetPlatformVersion)
 Write-Host ('Source root:   ' + $context.SourceRoot)
 Write-Host ('EPF artifact:  ' + $context.Artifact)
 Write-Host ('Sample XML:    ' + $context.SampleXml)
@@ -61,4 +64,3 @@ if (-not (Test-Path -LiteralPath $context.SourceRoot -PathType Leaf)) {
     Write-Host ('5. Save the processor as: ' + $context.Artifact)
     Write-Host '6. Run: .\scripts\dump.ps1'
 }
-
