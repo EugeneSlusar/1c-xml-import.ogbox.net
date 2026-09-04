@@ -26,6 +26,10 @@
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.ПолучитьНастройкиУТ</CommandName>
 				</Button>
+				<Button name="ПодобратьПараметрыУТ" id="10">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПодобратьПараметрыУТ</CommandName>
+				</Button>
 				<InputField name="ТекстРезультата" id="4">
 					<DataPath>ТекстРезультата</DataPath>
 					<TitleLocation>None</TitleLocation>
@@ -36,7 +40,7 @@
 			<Title formatted="true">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>MVP-0.1.29</v8:content>
+					<v8:content>MVP-0.1.30</v8:content>
 				</v8:item>
 			</Title>
 				</LabelDecoration>
@@ -81,6 +85,10 @@
 		<Command name="ПолучитьНастройкиУТ" id="5">
 			<Title><v8:item><v8:lang>ru</v8:lang><v8:content>Получить настройки УТ</v8:content></v8:item></Title>
 			<Action>ПолучитьНастройкиУТ</Action>
+		</Command>
+		<Command name="ПодобратьПараметрыУТ" id="6">
+			<Title><v8:item><v8:lang>ru</v8:lang><v8:content>Подобрать параметры</v8:content></v8:item></Title>
+			<Action>ПодобратьПараметрыУТ</Action>
 		</Command>
 	</Commands>
 </Form>
