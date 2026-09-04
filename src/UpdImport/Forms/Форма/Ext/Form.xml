@@ -22,6 +22,10 @@
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.СоздатьОбщийТовар</CommandName>
 				</Button>
+				<Button name="ПолучитьНастройкиУТ" id="9">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПолучитьНастройкиУТ</CommandName>
+				</Button>
 				<InputField name="ТекстРезультата" id="4">
 					<DataPath>ТекстРезультата</DataPath>
 					<TitleLocation>None</TitleLocation>
@@ -32,7 +36,7 @@
 			<Title formatted="true">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>MVP-0.1.28</v8:content>
+					<v8:content>MVP-0.1.29</v8:content>
 				</v8:item>
 			</Title>
 				</LabelDecoration>
@@ -74,8 +78,13 @@
 			<Title><v8:item><v8:lang>ru</v8:lang><v8:content>Создать общий товар</v8:content></v8:item></Title>
 			<Action>СоздатьОбщийТовар</Action>
 		</Command>
+		<Command name="ПолучитьНастройкиУТ" id="5">
+			<Title><v8:item><v8:lang>ru</v8:lang><v8:content>Получить настройки УТ</v8:content></v8:item></Title>
+			<Action>ПолучитьНастройкиУТ</Action>
+		</Command>
 	</Commands>
 </Form>
+
 
 
 
