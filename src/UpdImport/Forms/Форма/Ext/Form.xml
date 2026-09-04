@@ -30,6 +30,7 @@
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.ПодобратьПараметрыУТ</CommandName>
 				</Button>
+				<Button name="СоздатьКонтрагентаУТ" id="11"><Type>UsualButton</Type><CommandName>Form.Command.СоздатьКонтрагентаУТ</CommandName></Button>
 				<InputField name="ТекстРезультата" id="4">
 					<DataPath>ТекстРезультата</DataPath>
 					<TitleLocation>None</TitleLocation>
@@ -40,7 +41,7 @@
 			<Title formatted="true">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>MVP-0.1.32</v8:content>
+					<v8:content>MVP-0.1.33</v8:content>
 				</v8:item>
 			</Title>
 				</LabelDecoration>
@@ -65,6 +66,7 @@
 		</Attribute>
 		<Attribute name="ИННПродавца" id="7"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>12</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
 		<Attribute name="ИННПокупателя" id="8"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>12</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
+		<Attribute name="НаименованиеПокупателя" id="9"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>250</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ВыбратьXML" id="1">
@@ -92,6 +94,7 @@
 			<Title><v8:item><v8:lang>ru</v8:lang><v8:content>Подобрать параметры</v8:content></v8:item></Title>
 			<Action>ПодобратьПараметрыУТ</Action>
 		</Command>
+		<Command name="СоздатьКонтрагентаУТ" id="7"><Title><v8:item><v8:lang>ru</v8:lang><v8:content>Создать контрагента</v8:content></v8:item></Title><Action>СоздатьКонтрагентаУТ</Action></Command>
 	</Commands>
 </Form>
 
