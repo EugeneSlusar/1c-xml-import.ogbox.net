@@ -5,20 +5,9 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ГруппаСодержимое" id="2">
-			<Group>Vertical</Group>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ChildItems>
-				<LabelDecoration name="ВерсияОбработки" id="3">
-					<Title formatted="false">MWP-0.1.3</Title>
-					<HorizontalStretch>true</HorizontalStretch>
-					<VerticalStretch>true</VerticalStretch>
-					<HorizontalAlign>Right</HorizontalAlign>
-					<VerticalAlign>Bottom</VerticalAlign>
-				</LabelDecoration>
-			</ChildItems>
-		</UsualGroup>
+		<LabelDecoration name="ВерсияОбработки" id="2">
+			<Title>MWP-0.1.4</Title>
+		</LabelDecoration>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
