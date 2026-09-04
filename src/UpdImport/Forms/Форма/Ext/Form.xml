@@ -6,7 +6,12 @@
 	</Events>
 	<ChildItems>
 		<LabelDecoration name="ВерсияОбработки" id="2">
-			<Title formatted="true">MWP-0.1.6</Title>
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>MWP-0.1.7</v8:content>
+				</v8:item>
+			</Title>
 		</LabelDecoration>
 	</ChildItems>
 	<Attributes>
