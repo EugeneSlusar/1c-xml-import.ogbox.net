@@ -6,9 +6,7 @@
 	</Events>
 	<ChildItems>
 		<LabelDecoration name="ВерсияОбработки" id="2">
-			<Title>MWP-0.1.5</Title>
-			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-			<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+			<Title formatted="true">MWP-0.1.6</Title>
 		</LabelDecoration>
 	</ChildItems>
 	<Attributes>
