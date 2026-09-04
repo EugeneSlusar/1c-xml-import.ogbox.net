@@ -24,7 +24,7 @@
 			<Title formatted="true">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>MVP-0.1.9</v8:content>
+					<v8:content>MVP-0.1.10</v8:content>
 				</v8:item>
 			</Title>
 				</LabelDecoration>
@@ -50,11 +50,11 @@
 	</Attributes>
 	<Commands>
 		<Command name="ВыбратьXML" id="1">
-			<Title formatted="true"><v8:item><v8:lang>ru</v8:lang><v8:content>Выбрать XML</v8:content></v8:item></Title>
+			<Title><v8:item><v8:lang>ru</v8:lang><v8:content>Выбрать XML</v8:content></v8:item></Title>
 			<Action>ВыбратьXML</Action>
 		</Command>
 		<Command name="СоздатьРеализацию" id="2">
-			<Title formatted="true"><v8:item><v8:lang>ru</v8:lang><v8:content>Создать реализацию</v8:content></v8:item></Title>
+			<Title><v8:item><v8:lang>ru</v8:lang><v8:content>Создать реализацию</v8:content></v8:item></Title>
 			<Action>СоздатьРеализацию</Action>
 			<Enabled>false</Enabled>
 		</Command>
