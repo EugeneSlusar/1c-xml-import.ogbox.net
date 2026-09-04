@@ -5,14 +5,31 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<LabelDecoration name="ВерсияОбработки" id="2">
+		<UsualGroup name="ГруппаИмпорта" id="2">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ChildItems>
+				<Button name="ВыбратьXML" id="3">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ВыбратьXML</CommandName>
+				</Button>
+				<InputField name="ТекстРезультата" id="4">
+					<DataPath>ТекстРезультата</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<MultiLine>true</MultiLine>
+					<VerticalStretch>true</VerticalStretch>
+				</InputField>
+				<LabelDecoration name="ВерсияОбработки" id="5">
 			<Title formatted="true">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>MVP-0.1.8</v8:content>
+					<v8:content>MVP-0.1.9</v8:content>
 				</v8:item>
 			</Title>
-		</LabelDecoration>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -21,5 +38,25 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
+		<Attribute name="ТекстРезультата" id="6">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="ВыбратьXML" id="1">
+			<Title formatted="true"><v8:item><v8:lang>ru</v8:lang><v8:content>Выбрать XML</v8:content></v8:item></Title>
+			<Action>ВыбратьXML</Action>
+		</Command>
+		<Command name="СоздатьРеализацию" id="2">
+			<Title formatted="true"><v8:item><v8:lang>ru</v8:lang><v8:content>Создать реализацию</v8:content></v8:item></Title>
+			<Action>СоздатьРеализацию</Action>
+			<Enabled>false</Enabled>
+		</Command>
+	</Commands>
 </Form>
