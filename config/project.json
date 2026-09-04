@@ -1,4 +1,5 @@
 {
+  "version": "0.1.3",
   "target": {
     "configuration": "1С:Управление торговлей (базовая)",
     "configurationVersion": "11.5.24.43",

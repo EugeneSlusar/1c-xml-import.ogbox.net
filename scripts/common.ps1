@@ -174,6 +174,8 @@ function Invoke-UpdImportDesigner {
         throw "EPF is not found: $resolvedEpfPath"
     }
 
+    # Do not accept a stale result from a previous Designer run.
+    Remove-Item -LiteralPath $logPath, $resultPath -Force -ErrorAction SilentlyContinue
     & $context.OneCExecutable @arguments
     # GUI/batch launches of 1cv8.exe do not always initialise LASTEXITCODE
     # in Windows PowerShell. The /DumpResult file is the authoritative result.
@@ -186,11 +188,13 @@ function Invoke-UpdImportDesigner {
         throw "1C Designer failed with exit code $designerExitCode. See $logPath"
     }
 
-    if (Test-Path -LiteralPath $resultPath -PathType Leaf) {
-        $designerResult = (Get-Content -LiteralPath $resultPath -Raw -ErrorAction SilentlyContinue).Trim()
-        if (-not [string]::IsNullOrWhiteSpace($designerResult) -and $designerResult -ne '0') {
-            throw "1C Designer returned result $designerResult. See $logPath"
-        }
+    if (-not (Test-Path -LiteralPath $resultPath -PathType Leaf)) {
+        throw "1C Designer did not produce a result file. See $logPath"
+    }
+
+    $designerResult = (Get-Content -LiteralPath $resultPath -Raw -ErrorAction SilentlyContinue).Trim()
+    if (-not [string]::IsNullOrWhiteSpace($designerResult) -and $designerResult -ne '0') {
+        throw "1C Designer returned result $designerResult. See $logPath"
     }
 
     Write-Host "$Operation completed successfully."
