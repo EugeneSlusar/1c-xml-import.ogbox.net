@@ -184,21 +184,21 @@ function Invoke-UpdImportDesigner {
         $designerExitCode = $LASTEXITCODE
     }
 
-    if ($designerExitCode -ne 0) {
+    if (-not (Test-Path -LiteralPath $resultPath -PathType Leaf)) {
         if ($designerExitCode -eq -1073741510) {
             Write-Warning "BUILD CANCELLED: the 1C Designer process was closed. EPF was not published."
             return $false
         }
-        throw "1C Designer failed with exit code $designerExitCode. See $logPath"
-    }
-
-    if (-not (Test-Path -LiteralPath $resultPath -PathType Leaf)) {
-        throw "1C Designer did not produce a result file. See $logPath"
+        throw "1C Designer failed with exit code $designerExitCode and did not produce a result file. See $logPath"
     }
 
     $designerResult = (Get-Content -LiteralPath $resultPath -Raw -ErrorAction SilentlyContinue).Trim()
     if (-not [string]::IsNullOrWhiteSpace($designerResult) -and $designerResult -ne '0') {
         throw "1C Designer returned result $designerResult. See $logPath"
+    }
+
+    if ($designerExitCode -ne 0) {
+        Write-Warning "1C Designer returned exit code $designerExitCode, but DumpResult=0; build completed successfully."
     }
 
     Write-Host "$Operation completed successfully."
