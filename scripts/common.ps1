@@ -184,6 +184,12 @@ function Invoke-UpdImportDesigner {
         $designerExitCode = $LASTEXITCODE
     }
 
+    # 1C may create / finish writing DumpResult slightly after the process exits.
+    $resultDeadline = (Get-Date).AddSeconds(10)
+    while (-not (Test-Path -LiteralPath $resultPath -PathType Leaf) -and (Get-Date) -lt $resultDeadline) {
+        Start-Sleep -Milliseconds 250
+    }
+
     if (-not (Test-Path -LiteralPath $resultPath -PathType Leaf)) {
         if ($designerExitCode -eq -1073741510) {
             Write-Warning "BUILD CANCELLED: the 1C Designer process was closed. EPF was not published."
@@ -195,7 +201,18 @@ function Invoke-UpdImportDesigner {
         throw "1C Designer failed with exit code $designerExitCode and did not produce a result file. See $logPath"
     }
 
-    $designerResult = (Get-Content -LiteralPath $resultPath -Raw -ErrorAction SilentlyContinue).Trim()
+    $designerResult = ''
+    $resultDeadline = (Get-Date).AddSeconds(10)
+    while ((Get-Date) -lt $resultDeadline) {
+        $designerResult = (Get-Content -LiteralPath $resultPath -Raw -ErrorAction SilentlyContinue).Trim()
+        if ($designerResult -eq '0') {
+            break
+        }
+        Start-Sleep -Milliseconds 250
+    }
+    if ([string]::IsNullOrWhiteSpace($designerResult)) {
+        throw "1C Designer produced an empty result file. See $logPath"
+    }
     if (-not [string]::IsNullOrWhiteSpace($designerResult) -and $designerResult -ne '0') {
         throw "1C Designer returned result $designerResult. See $logPath"
     }
