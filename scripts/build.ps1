@@ -7,7 +7,10 @@ param(
 
 . (Join-Path $PSScriptRoot 'common.ps1')
 
-Invoke-UpdImportDesigner -Operation Build -UserName $UserName -DryRun:$DryRun
+$buildCompleted = Invoke-UpdImportDesigner -Operation Build -UserName $UserName -DryRun:$DryRun
+if (-not $buildCompleted) {
+    exit 1
+}
 
 if ($Publish -and $DryRun) {
     throw 'Нельзя публиковать результат режима DryRun.'
