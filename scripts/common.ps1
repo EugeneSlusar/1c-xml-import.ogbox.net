@@ -189,6 +189,9 @@ function Invoke-UpdImportDesigner {
             Write-Warning "BUILD CANCELLED: the 1C Designer process was closed. EPF was not published."
             return $false
         }
+        if ((Test-Path -LiteralPath $logPath -PathType Leaf) -and (Get-Item -LiteralPath $logPath).Length -eq 0) {
+            throw "1C Designer could not access the development infobase. Close all 1C sessions connected to the local UNF infobase and run build again."
+        }
         throw "1C Designer failed with exit code $designerExitCode and did not produce a result file. See $logPath"
     }
 
