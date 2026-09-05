@@ -48,8 +48,15 @@ if ($Publish) {
         throw 'Не удалось отправить коммиты в origin/main.'
     }
 
-    & gh release view $tag --repo $repository *> $null
-    $releaseExists = ($LASTEXITCODE -eq 0)
+    $previousErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        & gh release view $tag --repo $repository 2>$null
+        $releaseExists = ($LASTEXITCODE -eq 0)
+    }
+    finally {
+        $ErrorActionPreference = $previousErrorActionPreference
+    }
     if ($releaseExists) {
         Write-Host "Обновление существующего релиза $tag..."
         & gh release upload $tag $artifactPath --repo $repository --clobber
