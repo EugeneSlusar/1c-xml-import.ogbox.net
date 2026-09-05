@@ -186,7 +186,7 @@ function Invoke-UpdImportDesigner {
 
     if ($designerExitCode -ne 0) {
         if ($designerExitCode -eq -1073741510) {
-            Write-Warning "Сборка отменена: процесс 1С был закрыт пользователем."
+            Write-Warning "BUILD CANCELLED: the 1C Designer process was closed. EPF was not published."
             return $false
         }
         throw "1C Designer failed with exit code $designerExitCode. See $logPath"
