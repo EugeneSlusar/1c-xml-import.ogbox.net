@@ -31,6 +31,7 @@
 					<CommandName>Form.Command.ПодобратьПараметрыУТ</CommandName>
 				</Button>
 				<Button name="СоздатьКонтрагентаУТ" id="11"><Type>UsualButton</Type><CommandName>Form.Command.СоздатьКонтрагентаУТ</CommandName></Button>
+				<Button name="СоздатьЧерновикРеализации" id="12"><Type>UsualButton</Type><CommandName>Form.Command.СоздатьЧерновикРеализации</CommandName></Button>
 				<InputField name="ТекстРезультата" id="4">
 					<DataPath>ТекстРезультата</DataPath>
 					<TitleLocation>None</TitleLocation>
@@ -41,7 +42,7 @@
 			<Title formatted="true">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>MVP-0.1.36</v8:content>
+					<v8:content>MVP-0.1.37</v8:content>
 				</v8:item>
 			</Title>
 				</LabelDecoration>
@@ -67,6 +68,7 @@
 		<Attribute name="ИННПродавца" id="7"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>12</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
 		<Attribute name="ИННПокупателя" id="8"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>12</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
 		<Attribute name="НаименованиеПокупателя" id="9"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>250</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
+		<Attribute name="АдресПоследнегоXML" id="10"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>0</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ВыбратьXML" id="1">
@@ -95,6 +97,7 @@
 			<Action>ПодобратьПараметрыУТ</Action>
 		</Command>
 		<Command name="СоздатьКонтрагентаУТ" id="7"><Title><v8:item><v8:lang>ru</v8:lang><v8:content>Создать контрагента</v8:content></v8:item></Title><Action>СоздатьКонтрагентаУТ</Action></Command>
+		<Command name="СоздатьЧерновикРеализации" id="8"><Title><v8:item><v8:lang>ru</v8:lang><v8:content>Создать черновик реализации</v8:content></v8:item></Title><Action>СоздатьЧерновикРеализации</Action></Command>
 	</Commands>
 </Form>
 
