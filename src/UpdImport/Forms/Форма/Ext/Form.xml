@@ -10,6 +10,11 @@
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ChildItems>
+				<UsualGroup name="ГруппаКоманд" id="13">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ChildItems>
 				<Button name="ВыбратьXML" id="3">
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.ВыбратьXML</CommandName>
@@ -32,6 +37,8 @@
 				</Button>
 				<Button name="СоздатьКонтрагентаУТ" id="11"><Type>UsualButton</Type><CommandName>Form.Command.СоздатьКонтрагентаУТ</CommandName></Button>
 				<Button name="СоздатьЧерновикРеализации" id="12"><Type>UsualButton</Type><CommandName>Form.Command.СоздатьЧерновикРеализации</CommandName></Button>
+					</ChildItems>
+				</UsualGroup>
 				<InputField name="ТекстРезультата" id="4">
 					<DataPath>ТекстРезультата</DataPath>
 					<TitleLocation>None</TitleLocation>
@@ -42,7 +49,7 @@
 			<Title formatted="true">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>MVP-0.1.37</v8:content>
+					<v8:content>MVP-0.1.38</v8:content>
 				</v8:item>
 			</Title>
 				</LabelDecoration>
