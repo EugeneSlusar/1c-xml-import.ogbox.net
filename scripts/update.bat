@@ -9,4 +9,6 @@ if not "%EXIT_CODE%"=="0" (
     echo Update failed with exit code %EXIT_CODE%.
 )
 
+echo.
+pause
 exit /b %EXIT_CODE%
