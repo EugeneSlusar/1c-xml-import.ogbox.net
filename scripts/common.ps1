@@ -185,7 +185,8 @@ function Invoke-UpdImportDesigner {
     }
 
     # 1C may create / finish writing DumpResult slightly after the process exits.
-    $resultDeadline = (Get-Date).AddSeconds(60)
+    # Wait for the result event; the timeout is only a safety net for a hung run.
+    $resultDeadline = (Get-Date).AddMinutes(5)
     while (-not (Test-Path -LiteralPath $resultPath -PathType Leaf) -and (Get-Date) -lt $resultDeadline) {
         Start-Sleep -Milliseconds 250
     }
@@ -202,7 +203,7 @@ function Invoke-UpdImportDesigner {
     }
 
     $designerResult = ''
-    $resultDeadline = (Get-Date).AddSeconds(60)
+    $resultDeadline = (Get-Date).AddMinutes(5)
     while ((Get-Date) -lt $resultDeadline) {
         $designerResult = (Get-Content -LiteralPath $resultPath -Raw -ErrorAction SilentlyContinue).Trim()
         if ($designerResult -eq '0') {
